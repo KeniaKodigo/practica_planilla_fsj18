@@ -14,7 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('template');
 });
 
 /** (/) => index */
+
+/*ruta para probar una vista (get, post, put, delete)
+Route::get('/prueba', function () {
+    return view('pages.lista_empleados');
+});*/
