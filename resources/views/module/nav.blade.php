@@ -10,7 +10,7 @@
         <a class="nav-link active" aria-current="page" href="#"><i class='bx bxs-user-circle'></i> Home</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="#"><i class='bx bxs-book-content'></i> Empleados</a>
+        <a class="nav-link" href="{{ url('/empleados_activos') }}"><i class='bx bxs-book-content'></i> Empleados</a>
         </li>
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

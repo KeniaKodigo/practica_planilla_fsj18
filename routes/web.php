@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\empleadosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +20,11 @@ Route::get('/', function () {
 
 /** (/) => index */
 
-/*ruta para probar una vista (get, post, put, delete)
-Route::get('/prueba', function () {
-    return view('pages.lista_empleados');
-});*/
+//ruta para probar una vista (get, post, put, delete)
+// Route::get('/prueba', function () {
+//     return view('pages.lista_empleados');
+// });
+
+//llamamos el metodo index() del controlador empleadosController
+Route::get('/empleados_activos', [empleadosController::class, 'index']);
+
