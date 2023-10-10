@@ -27,4 +27,8 @@ Route::get('/', function () {
 
 //llamamos el metodo index() del controlador empleadosController
 Route::get('/empleados_activos', [empleadosController::class, 'index']);
+//url() / route()
+Route::get('/formulario', [empleadosController::class, 'getFormulario'])->name('formularioRegistro');
+
+Route::post('/registrarEmp', [empleadosController::class, 'store'])->name('guardar.empleados');
 
