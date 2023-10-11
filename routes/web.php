@@ -32,3 +32,7 @@ Route::get('/formulario', [empleadosController::class, 'getFormulario'])->name('
 
 Route::post('/registrarEmp', [empleadosController::class, 'store'])->name('guardar.empleados');
 
+#ruta con parametros
+Route::put('/actualizarEmp/{id}', [empleadosController::class, 'update'])->name('actualizar.empleado');
+
+Route::put('/desactivarEmp/{id}', [empleadosController::class, 'destroy'])->name('desactivar.empleado');
