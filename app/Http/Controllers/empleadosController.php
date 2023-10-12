@@ -28,9 +28,9 @@ class empleadosController extends Controller
         //$empleados = Empleados::select('*')->where('id_estado','=',1)->get();
 
         /**
-         * SELECT *, departamento.nombre FROM empleados INNER JOIN departamento ON empleados.id_departamento = departamento.id WHERE empleados.id_estado = 1
+         * SELECT *, departamento.nombre FROM empleados INNER JOIN departamento ON empleados.id_departamento = departamento.id WHERE empleados.id_jefe = ? AND empleados.id_estado = 1
          */
-        $empleados = Empleados::join('departamento', 'empleados.id_departamento', '=', 'departamento.id')->where('empleados.id_estado','=',1)->select('empleados.*', 'departamento.nombre as departamento')->get();
+        $empleados = Empleados::join('departamento', 'empleados.id_departamento', '=', 'departamento.id')->where('empleados.id_jefe','=', session('jefe_id'))->where('empleados.id_estado','=',1)->select('empleados.*', 'departamento.nombre as departamento')->get();
 
         return view('pages.lista_empleados', array("empleado" => $empleados));
 
@@ -39,7 +39,7 @@ class empleadosController extends Controller
            * FROM tablaA
            * 
          */
-        Empleados::select('id_empleado AS ID','nombre _ empleado AS Nombre')->get();
+        //Empleados::select('id_empleado AS ID','nombre _ empleado AS Nombre')->get();
     }
 
 
@@ -62,7 +62,7 @@ class empleadosController extends Controller
         $empleado->telefono = $request->post('celular');
         $empleado->salario = $request->post('salario');
         $empleado->id_departamento = $request->post('departamento');
-        $empleado->id_jefe = 1; 
+        $empleado->id_jefe = session('jefe_id'); 
         $empleado->id_estado = 1;
         $empleado->save();
 

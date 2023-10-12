@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\empleadosController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('template');
+Route::get('/login', function () {
+    return view('login');
 });
 
 /** (/) => index */
@@ -36,3 +37,8 @@ Route::post('/registrarEmp', [empleadosController::class, 'store'])->name('guard
 Route::put('/actualizarEmp/{id}', [empleadosController::class, 'update'])->name('actualizar.empleado');
 
 Route::put('/desactivarEmp/{id}', [empleadosController::class, 'destroy'])->name('desactivar.empleado');
+
+#Apartado del Login
+Route::get('/inicioSesion', [LoginController::class, 'iniciarSesion'])->name('inicio.sesion');
+
+Route::get('/cerrarSesion', [LoginController::class, 'cerrarSesion'])->name('cerrar.sesion');
