@@ -19,8 +19,8 @@
             <i class='bx bxs-report' style='color:#ffffff' ></i> Reportes
         </a>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Empleados</a></li>
-            <li><a class="dropdown-item" href="#">Empleados por departamento</a></li>
+            <li><a class="dropdown-item" href="{{ url('/reporte_empleados') }}">Empleados</a></li>
+            <li><a class="dropdown-item" href="{{ url('/filtrado_departamentos') }}">Empleados por departamento</a></li>
         </ul>
         </li>
     </ul>
